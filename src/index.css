@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-accent: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Inter", system-ui, sans-serif;
+
+  /* Klas / şık salon paleti — sıcak espresso + fildişi + pirinç (brass) */
+  --color-charcoal: #211a14;        /* sıcak espresso siyahı */
+  --color-charcoal-deep: #150f0b;   /* en koyu zemin */
+  --color-charcoal-soft: #372c22;   /* yumuşak koyu ton, kart/ayraç zemini */
+  --color-warm-white: #faf6ee;      /* fildişi */
+  --color-light-gray: #f1e9da;      /* krem, kart zemini */
+  --color-steel: #9c8f7c;           /* sıcak taş grisi (ikincil metin) */
+  --color-steel-light: #cabfab;     /* açık sıcak gri (koyu zeminde ikincil metin) */
+  --color-copper: #a9823f;          /* pirinç / antika altın — vurgu */
+  --color-copper-light: #c9a25c;    /* açık pirinç, hover */
+  --color-copper-dim: #7c5f2f;      /* koyu pirinç */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-warm-white);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: var(--color-copper);
+  color: var(--color-warm-white);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+}
+
+/* Sitenin imza görsel öğesi: zarif pirinç ince çerçeve + yumuşak gölge.
+   Bir vitrin/salon camekânındaki çerçeveli tablo hissini verir. */
+.corner-frame {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: var(--color-warm-white);
+  box-shadow: 0 22px 45px -18px rgba(21, 15, 11, 0.35);
+}
+.corner-frame::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid color-mix(in srgb, var(--color-copper) 55%, transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+.corner-frame > * {
+  position: relative;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.stagger-child {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stagger-child.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
