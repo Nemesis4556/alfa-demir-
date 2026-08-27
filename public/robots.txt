@@ -37,4 +37,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://www.alfademirdograma.com/sitemap.xml
+Sitemap: https://www.alfaametal.com.tr/sitemap.xml
