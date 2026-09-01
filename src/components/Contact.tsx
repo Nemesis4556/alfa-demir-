@@ -60,7 +60,7 @@ export default function Contact() {
           <div ref={rightRef} className={`reveal-scale ${rightVisible ? "is-visible" : ""}`}>
             <div className="aspect-[4/3] sm:aspect-[16/11] w-full border border-charcoal/10 overflow-hidden">
               <iframe
-                title="Alfa Demir Doğrama Konum"
+                title="Alfa Metal Konum"
                 src={mapsEmbedUrl}
                 className="w-full h-full grayscale-[15%]"
                 loading="lazy"
