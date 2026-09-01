@@ -34,7 +34,7 @@ export default function About() {
             <br /> Güvenilir Uygulama.
           </h2>
           <p className="mt-6 text-steel text-base sm:text-lg max-w-lg">
-            Alfa Demir Doğrama, İzmir ve Ege Bölgesi'nde metal işleri ve özel
+            Alfa Metal, İzmir ve Ege Bölgesi'nde metal işleri ve özel
             uygulama çözümleri sunmaktadır.
           </p>
         </div>
