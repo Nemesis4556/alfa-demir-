@@ -1,7 +1,7 @@
 // Merkezi içerik dosyası. Tüm metinler ve görsel referansları burada tutulur.
 
 export const business = {
-  name: "ALFA DEMİR DOĞRAMA",
+  name: "ALFA METAL",
   phoneDisplay: "0553 011 74 87",
   phoneTel: "+905530117487",
   whatsappUrl: "https://wa.me/905530117487",
