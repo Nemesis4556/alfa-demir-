@@ -30,7 +30,7 @@ export default function Hero() {
 
           <h1 className="font-display uppercase text-warm-white text-5xl sm:text-6xl lg:text-7xl leading-[0.95] font-semibold">
             <span className="sr-only">
-              İzmir Demir Doğrama, PVC Doğrama ve Metal İmalat — Sağlam İşçilik, Doğru Çözüm
+              Alfa Metal — İzmir Demir Doğrama, PVC Doğrama ve Metal İmalat, Sağlam İşçilik, Doğru Çözüm
             </span>
             {titleLines.map((line, i) => (
               <span key={line} className="block overflow-hidden" aria-hidden="true">
