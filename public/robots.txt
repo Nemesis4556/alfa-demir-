@@ -1,4 +1,4 @@
-# Alfa Demir Doğrama — robots.txt
+# Alfa Metal — robots.txt
 # Genel arama motorları
 User-agent: *
 Allow: /
