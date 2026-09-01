@@ -1,63 +1,76 @@
-import { images } from "../data/content";
+import { process } from "../data/content";
 import { useReveal } from "../hooks/useReveal";
-import CornerFrame from "./CornerFrame";
 
-function GalleryItem({
+function ProcessStep({
   item,
-  className = "",
+  index,
+  isLast,
 }: {
-  item: (typeof images.gallery)[number];
-  className?: string;
+  item: (typeof process)[number];
+  index: number;
+  isLast: boolean;
 }) {
   const { ref, isVisible } = useReveal<HTMLDivElement>();
   return (
-    <div
-      ref={ref}
-      className={`reveal-scale ${isVisible ? "is-visible" : ""} group relative overflow-hidden ${className}`}
-    >
-      <CornerFrame className="block h-full">
-        <div className="relative h-full overflow-hidden">
-          <img
-            src={item.src}
-            alt={item.alt}
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/40 transition-colors duration-300 flex items-end p-5">
-            <span className="text-warm-white text-sm font-medium uppercase tracking-wide opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-              Projeyi İncele →
-            </span>
-          </div>
+    <div ref={ref} className="relative flex-1 min-w-[140px]">
+      <div
+        className={`stagger-child ${isVisible ? "is-visible" : ""}`}
+        style={{ transitionDelay: `${index * 100}ms` }}
+      >
+        <div className="flex items-center gap-3 sm:block">
+          <span className="font-mono text-copper text-sm">{item.no}</span>
+          {!isLast && (
+            <span
+              className="sm:hidden h-px flex-1 bg-charcoal/15"
+              aria-hidden="true"
+            />
+          )}
         </div>
-      </CornerFrame>
+        <h3 className="font-display uppercase text-lg sm:text-2xl text-warm-white tracking-wide mt-2 sm:mt-4">
+          {item.title}
+        </h3>
+        <p className="mt-2 text-steel-light text-sm sm:text-base max-w-[220px]">
+          {item.desc}
+        </p>
+      </div>
+      {!isLast && (
+        <span
+          className="hidden sm:block absolute top-2 left-[3.2rem] right-0 h-px overflow-hidden"
+          aria-hidden="true"
+        >
+          <span
+            className={`block h-full bg-copper/40 origin-left transition-transform duration-700 ${
+              isVisible ? "scale-x-100" : "scale-x-0"
+            }`}
+            style={{ transitionDelay: `${index * 100 + 150}ms` }}
+          />
+        </span>
+      )}
     </div>
   );
 }
 
-export default function Projects() {
+export default function Process() {
   const { ref: headRef, isVisible: headVisible } = useReveal<HTMLDivElement>();
-  const [large, ...rest] = images.gallery;
 
   return (
-    <section id="projeler" className="bg-warm-white border-t border-charcoal/10 py-20 sm:py-28">
+    <section className="bg-charcoal py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div
+        <h2
           ref={headRef}
-          className={`reveal ${headVisible ? "is-visible" : ""} mb-10 sm:mb-14`}
+          className={`reveal ${headVisible ? "is-visible" : ""} font-display uppercase text-3xl sm:text-5xl text-warm-white tracking-wide mb-10 sm:mb-16`}
         >
-          <h2 className="font-display uppercase text-3xl sm:text-5xl text-charcoal tracking-wide leading-tight">
-            Gerçek İşler.
-            <br className="hidden sm:block" /> Gerçek Sonuçlar.
-          </h2>
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-          <GalleryItem item={large} className="sm:row-span-2 aspect-[4/3] sm:aspect-auto" />
-          <div className="grid grid-cols-2 gap-4 sm:gap-6">
-            {rest.map((item) => (
-              <GalleryItem item={item} className="aspect-[4/3]" key={item.src} />
-            ))}
-          </div>
+          Çalışma Süreci
+        </h2>
+        <div className="flex flex-col sm:flex-row gap-8 sm:gap-6">
+          {process.map((item, i) => (
+            <ProcessStep
+              item={item}
+              index={i}
+              isLast={i === process.length - 1}
+              key={item.no}
+            />
+          ))}
         </div>
       </div>
     </section>
