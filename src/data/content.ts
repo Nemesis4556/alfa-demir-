@@ -19,28 +19,38 @@ export const images = {
   ctaBg: "https://images.unsplash.com/photo-1531053326607-9d349096d887?auto=format&fit=crop&w=1800&q=60",
   gallery: [
     {
-      src: "https://images.unsplash.com/photo-1714504904786-b6732390b206?auto=format&fit=crop&w=1200&q=80",
+      src: "https://images.unsplash.com/photo-1714504904786-b6732390b206?auto=format&fit=crop&w=1600&q=80",
       alt: "Atölyede metal parça üzerinde çalışan usta",
       size: "large" as const,
     },
     {
-      src: "https://images.unsplash.com/photo-1564182998523-6923112e7d6b?auto=format&fit=crop&w=800&q=80",
-      alt: "Taşlama makinesiyle metal işleme, kıvılcımlar",
+      src: "https://images.unsplash.com/photo-1569888249531-684c7f75b88f?auto=format&fit=crop&w=800&q=80",
+      alt: "Özel imalat siyah demir kapı — Demir Doğrama",
       size: "small" as const,
     },
     {
-      src: "https://images.unsplash.com/photo-1548683726-203119be6a39?auto=format&fit=crop&w=800&q=80",
-      alt: "Masa üzerinde dizili metal flanşlar",
+      src: "https://images.unsplash.com/photo-1532888033213-9e194587f77b?auto=format&fit=crop&w=800&q=80",
+      alt: "Paslanmaz çelik korkuluklu merdiven — Korkuluk & Merdiven",
+      size: "small" as const,
+    },
+    {
+      src: "https://images.unsplash.com/photo-1695928668952-c3c01a638e1d?auto=format&fit=crop&w=800&q=80",
+      alt: "Beyaz çerçeveli PVC pencere sistemi — PVC Doğrama",
+      size: "small" as const,
+    },
+    {
+      src: "https://images.unsplash.com/photo-1770756051811-1612ac8bedfa?auto=format&fit=crop&w=800&q=80",
+      alt: "Modern ev cephesinde otomatik garaj kapısı — Otomatik Kapı",
+      size: "small" as const,
+    },
+    {
+      src: "https://images.unsplash.com/photo-1541028271966-c2ff13a6fd4c?auto=format&fit=crop&w=800&q=80",
+      alt: "Metal saçak ve kanopi yapısı — Çatı & Sundurma",
       size: "small" as const,
     },
     {
       src: "https://images.unsplash.com/photo-1647586028042-1de4d4a935e6?auto=format&fit=crop&w=800&q=80",
       alt: "Açı taşlama ile metal kesim, kıvılcım saçan uygulama",
-      size: "small" as const,
-    },
-    {
-      src: "https://images.unsplash.com/photo-1641893823219-38b433f736c0?auto=format&fit=crop&w=800&q=80",
-      alt: "Şalümeyle metal profil kaynağı yapan usta",
       size: "small" as const,
     },
   ],
