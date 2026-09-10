@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { services } from "../data/content";
 import { useReveal } from "../hooks/useReveal";
 
@@ -9,8 +10,8 @@ function ServiceRow({ item, index }: { item: (typeof services)[number]; index: n
       className={`stagger-child ${isVisible ? "is-visible" : ""} group border-t border-charcoal/10 last:border-b`}
       style={{ transitionDelay: `${index * 70}ms` }}
     >
-      <a
-        href="#iletisim"
+      <Link
+        to={`/hizmetler/${item.slug}`}
         className="flex items-center gap-5 sm:gap-8 py-6 sm:py-8 px-1 sm:px-2 transition-colors duration-300 hover:bg-charcoal/[0.04]"
       >
         <span className="font-mono text-steel text-sm sm:text-base w-8 sm:w-10 shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-copper">
@@ -30,7 +31,7 @@ function ServiceRow({ item, index }: { item: (typeof services)[number]; index: n
         >
           →
         </span>
-      </a>
+      </Link>
     </div>
   );
 }
@@ -57,6 +58,15 @@ export default function Services() {
           {services.map((item, i) => (
             <ServiceRow item={item} index={i} key={item.no} />
           ))}
+        </div>
+
+        <div className="mt-8 sm:mt-10">
+          <Link
+            to="/hizmetler"
+            className="inline-flex items-center gap-2 text-copper hover:text-copper-light text-sm font-medium uppercase tracking-wide transition-colors duration-200"
+          >
+            Tüm Hizmetleri İncele <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </section>

@@ -61,41 +61,49 @@ export const services = [
     no: "01",
     title: "DEMİR DOĞRAMA",
     desc: "Kapı, pencere ve doğrama sistemlerinde ölçüye özel metal imalat.",
+    slug: "demir-dograma-izmir",
   },
   {
     no: "02",
     title: "METAL İMALAT",
     desc: "Proje ihtiyacına göre kesim, kaynak ve montaj süreçleriyle imalat.",
+    slug: "metal-imalat-izmir",
   },
   {
     no: "03",
     title: "KORKULUK SİSTEMLERİ",
     desc: "Balkon, teras ve merdiven için dayanıklı korkuluk uygulamaları.",
+    slug: "korkuluk-izmir",
   },
   {
     no: "04",
     title: "MERDİVEN UYGULAMALARI",
     desc: "İç ve dış mekân için metal merdiven imalatı ve montajı.",
+    slug: "merdiven-izmir",
   },
   {
     no: "05",
     title: "ÇATI / SUNDURMA",
     desc: "Metal çatı ve sundurma sistemlerinde uygulama ve montaj hizmeti.",
+    slug: "catı-sundurma-izmir",
   },
   {
     no: "06",
     title: "ÖZEL METAL UYGULAMALARI",
     desc: "Standart dışı projeler için özel tasarım metal çözümleri.",
+    slug: "ozel-metal-uygulamalari-izmir",
   },
   {
     no: "07",
     title: "PVC DOĞRAMA",
     desc: "Isı ve ses yalıtımlı PVC pencere ve kapı sistemlerinde ölçü, tedarik ve montaj.",
+    slug: "pvc-dograma-izmir",
   },
   {
     no: "08",
     title: "OTOMATİK KAPI & KEPENK",
     desc: "Otomatik garaj kapısı, bariyer ve kepenk sistemlerinin kurulumu ve bakımı.",
+    slug: "otomatik-kapi-kepenk-izmir",
   },
 ];
 
@@ -182,9 +190,9 @@ export const seo = {
 } as const;
 
 export const navLinks = [
-  { label: "Ana Sayfa", href: "#anasayfa" },
   { label: "Hizmetler", href: "#hizmetler" },
   { label: "Projeler", href: "#projeler" },
+  { label: "Blog", href: "/blog" },
   { label: "Hakkımızda", href: "#hakkimizda" },
   { label: "S.S.S.", href: "#sss" },
   { label: "İletişim", href: "#iletisim" },

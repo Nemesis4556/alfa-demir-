@@ -1,5 +1,16 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { business, navLinks } from "../data/content";
+
+/** "#hizmetler" gibi bağlantılar ana sayfa dışında bir rotadayken
+ * "/#hizmetler" olarak çözülür; "/blog" gibi mutlak yollar aynen kullanılır. */
+function useResolveNavHref() {
+  const { pathname } = useLocation();
+  return (href: string) => {
+    if (href.startsWith("/")) return href;
+    return pathname === "/" ? href : `/${href}`;
+  };
+}
 
 function PhoneIcon() {
   return (
@@ -42,6 +53,7 @@ function ChatIcon() {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const resolveHref = useResolveNavHref();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -59,7 +71,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!menuOpen) return;
-    const mq = window.matchMedia("(min-width: 1024px)");
+    const mq = window.matchMedia("(min-width: 768px)");
     const onChange = () => {
       if (mq.matches) setMenuOpen(false);
     };
@@ -77,40 +89,40 @@ export default function Navbar() {
     >
       <div
         className={`mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between transition-all duration-300 h-16 ${
-          scrolled ? "lg:h-16" : "lg:h-20"
+          scrolled ? "md:h-16" : "md:h-20"
         }`}
       >
-        <a
-          href="#anasayfa"
+        <Link
+          to="/"
           onClick={() => setMenuOpen(false)}
           className="font-display tracking-wide text-warm-white text-base sm:text-xl font-semibold uppercase whitespace-nowrap relative z-10"
         >
           {business.name}
-        </a>
+        </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={resolveHref(link.href)}
               className="font-body text-sm text-steel-light hover:text-warm-white transition-colors duration-200 uppercase tracking-wide"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
-          href="#iletisim"
-          className="hidden lg:inline-flex items-center border border-copper text-copper-light hover:bg-copper hover:text-warm-white transition-colors duration-200 text-sm font-medium uppercase tracking-wide px-5 py-2 rounded-sm"
+        <Link
+          to={resolveHref("#iletisim")}
+          className="hidden md:inline-flex items-center border border-copper text-copper-light hover:bg-copper hover:text-warm-white transition-colors duration-200 text-sm font-medium uppercase tracking-wide px-5 py-2 rounded-sm"
         >
           Teklif Al
-        </a>
+        </Link>
 
         <button
           type="button"
           onClick={() => setMenuOpen((v) => !v)}
-          className="lg:hidden relative z-10 text-warm-white p-2 -mr-2"
+          className="md:hidden relative z-10 text-warm-white p-2 -mr-2"
           aria-label={menuOpen ? "Menüyü kapat" : "Menüyü aç"}
           aria-expanded={menuOpen}
         >
@@ -136,7 +148,7 @@ export default function Navbar() {
 
       {/* Mobil tam ekran menü */}
       <div
-        className={`lg:hidden fixed left-0 right-0 top-16 h-[calc(100dvh-4rem)] transition-opacity duration-300 ${
+        className={`md:hidden fixed left-0 right-0 top-16 h-[calc(100dvh-4rem)] transition-opacity duration-300 ${
           menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
@@ -145,9 +157,9 @@ export default function Navbar() {
         <nav className="relative h-full flex flex-col px-6 pt-6 pb-8 overflow-y-auto">
           <div className="flex-1 flex flex-col justify-center gap-0.5">
             {navLinks.map((link, i) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={resolveHref(link.href)}
                 onClick={() => setMenuOpen(false)}
                 className={`group flex items-center justify-between gap-4 py-3.5 border-b border-white/10 transition-all duration-500 ease-out ${
                   menuOpen
@@ -172,7 +184,7 @@ export default function Navbar() {
                 >
                   →
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -204,13 +216,13 @@ export default function Navbar() {
               </a>
             </div>
 
-            <a
-              href="#iletisim"
+            <Link
+              to={resolveHref("#iletisim")}
               onClick={() => setMenuOpen(false)}
               className="mt-6 flex items-center justify-center gap-2 bg-copper text-warm-white uppercase tracking-wide text-sm font-medium px-5 py-4 w-full rounded-sm"
             >
               Teklif Al <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </nav>
       </div>

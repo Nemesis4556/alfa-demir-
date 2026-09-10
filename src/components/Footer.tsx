@@ -1,4 +1,6 @@
+import { Link, useLocation } from "react-router-dom";
 import { business, navLinks, services } from "../data/content";
+import { blogPosts } from "../data/blog";
 
 function PhoneIcon() {
   return (
@@ -93,6 +95,12 @@ function ArrowUpIcon() {
 export default function Footer() {
   const year = new Date().getFullYear();
   const footerServices = services.slice(0, 6);
+  const footerPosts = blogPosts.slice(0, 4);
+  const { pathname } = useLocation();
+  const resolveHref = (href: string) => {
+    if (href.startsWith("/")) return href;
+    return pathname === "/" ? href : `/${href}`;
+  };
 
   return (
     <footer className="bg-charcoal-deep border-t border-white/10">
@@ -101,7 +109,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-12">
           {/* Marka */}
-          <div className="col-span-2 lg:col-span-4">
+          <div className="col-span-2 lg:col-span-3">
             <p className="font-display uppercase text-warm-white text-xl sm:text-2xl tracking-wide">
               {business.name}
             </p>
@@ -153,13 +161,13 @@ export default function Footer() {
             </p>
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={resolveHref(link.href)}
                   className="text-steel-light text-sm hover:text-copper-light transition-colors duration-200 w-fit"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -171,19 +179,45 @@ export default function Footer() {
             </p>
             <nav className="flex flex-col gap-3">
               {footerServices.map((service) => (
-                <a
+                <Link
                   key={service.no}
-                  href="#hizmetler"
+                  to={`/hizmetler/${service.slug}`}
                   className="text-steel-light text-sm hover:text-copper-light transition-colors duration-200 w-fit"
                 >
                   {service.title.charAt(0) + service.title.slice(1).toLowerCase()}
-                </a>
+                </Link>
+              ))}
+              <Link
+                to="/hizmetler"
+                className="text-copper-light text-sm hover:text-warm-white transition-colors duration-200 w-fit"
+              >
+                Tüm Hizmetler →
+              </Link>
+            </nav>
+          </div>
+
+          {/* Blog */}
+          <div className="col-span-1 lg:col-span-2">
+            <p className="font-mono text-steel text-xs uppercase tracking-[0.2em] mb-5">
+              Blog
+            </p>
+            <nav className="flex flex-col gap-3">
+              {footerPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  to={`/blog/${post.slug}`}
+                  className="text-steel-light text-sm hover:text-copper-light transition-colors duration-200 w-fit"
+                >
+                  {post.title.length > 34
+                    ? `${post.title.slice(0, 34)}…`
+                    : post.title}
+                </Link>
               ))}
             </nav>
           </div>
 
           {/* İletişim */}
-          <div className="col-span-2 lg:col-span-3">
+          <div className="col-span-2 lg:col-span-2">
             <p className="font-mono text-steel text-xs uppercase tracking-[0.2em] mb-5">
               İletişim
             </p>
@@ -230,8 +264,8 @@ export default function Footer() {
             </span>
           </p>
 
-          <a
-            href="#anasayfa"
+          <Link
+            to={resolveHref("#anasayfa")}
             aria-label="Sayfa başına dön"
             className="flex items-center gap-2 text-steel-light hover:text-copper-light text-xs uppercase tracking-wide transition-colors duration-200"
           >
@@ -239,7 +273,7 @@ export default function Footer() {
             <span className="flex items-center justify-center w-7 h-7 border border-white/15 rounded-full">
               <ArrowUpIcon />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

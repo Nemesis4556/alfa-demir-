@@ -19,14 +19,27 @@ Süreç: iletişim (telefon/WhatsApp) → yerinde keşif ve ücretsiz ölçü �
 
 ## Hizmetler
 
-- Demir Doğrama: Kapı, pencere ve doğrama sistemlerinde ölçüye özel metal imalat.
-- Metal İmalat: Proje ihtiyacına göre kesim, kaynak ve montaj süreçleriyle imalat.
-- Korkuluk Sistemleri: Balkon, teras ve merdiven için dayanıklı korkuluk uygulamaları.
-- Merdiven Uygulamaları: İç ve dış mekân için metal merdiven imalatı ve montajı.
-- Çatı / Sundurma: Metal çatı ve sundurma sistemlerinde uygulama ve montaj hizmeti.
-- Özel Metal Uygulamaları: Standart dışı projeler için özel tasarım metal çözümleri.
-- PVC Doğrama: Isı ve ses yalıtımlı PVC pencere ve kapı sistemlerinde ölçü, tedarik ve montaj.
-- Otomatik Kapı & Kepenk: Otomatik garaj kapısı, bariyer ve kepenk sistemlerinin kurulumu ve bakımı.
+Her hizmetin kendi sayfası vardır (fiyatı etkileyen faktörler, kapsam ve
+hizmete özel sık sorulan sorular dahil):
+
+- Demir Doğrama — https://www.alfaametal.com.tr/hizmetler/demir-dograma-izmir
+  Kapı, pencere ve doğrama sistemlerinde ölçüye özel metal imalat.
+- PVC Doğrama — https://www.alfaametal.com.tr/hizmetler/pvc-dograma-izmir
+  Isı ve ses yalıtımlı PVC pencere ve kapı sistemlerinde ölçü, tedarik ve montaj.
+- Korkuluk Sistemleri — https://www.alfaametal.com.tr/hizmetler/korkuluk-izmir
+  Balkon, teras ve merdiven için dayanıklı korkuluk uygulamaları.
+- Merdiven Uygulamaları — https://www.alfaametal.com.tr/hizmetler/merdiven-izmir
+  İç ve dış mekân için metal merdiven imalatı ve montajı.
+- Çatı / Sundurma — https://www.alfaametal.com.tr/hizmetler/catı-sundurma-izmir
+  Metal çatı ve sundurma sistemlerinde uygulama ve montaj hizmeti.
+- Metal İmalat — https://www.alfaametal.com.tr/hizmetler/metal-imalat-izmir
+  Proje ihtiyacına göre kesim, kaynak ve montaj süreçleriyle imalat.
+- Özel Metal Uygulamaları — https://www.alfaametal.com.tr/hizmetler/ozel-metal-uygulamalari-izmir
+  Standart dışı projeler için özel tasarım metal çözümleri.
+- Otomatik Kapı & Kepenk — https://www.alfaametal.com.tr/hizmetler/otomatik-kapi-kepenk-izmir
+  Otomatik garaj kapısı, bariyer ve kepenk sistemlerinin kurulumu ve bakımı.
+
+Tüm hizmetlerin listesi: https://www.alfaametal.com.tr/hizmetler
 
 ## Sık Sorulan Sorular
 
@@ -44,6 +57,20 @@ A: İzmir'in tüm bölgelerinde yerinde keşif, ölçü ve montaj hizmeti sağla
 Q: Keşif ücretli mi?
 A: Hayır, İzmir sınırları içinde keşif ve ölçü ücretsizdir.
 
+## Blog
+
+Fiyat rehberleri, karşılaştırmalar ve bakım ipuçları:
+
+- İzmir'de Demir Doğrama Fiyatını Etkileyen 5 Faktör — https://www.alfaametal.com.tr/blog/izmir-demir-dograma-fiyatlarini-etkileyen-faktorler
+- PVC Doğrama mı, Demir Doğrama mı? Hangisini Seçmeli? — https://www.alfaametal.com.tr/blog/pvc-dograma-mi-demir-dograma-mi
+- Balkon Korkuluğu Seçerken Dikkat Edilmesi Gerekenler — https://www.alfaametal.com.tr/blog/balkon-korkuluk-secerken-dikkat-edilmesi-gerekenler
+- Otomatik Garaj Kapısı Bakımı Nasıl Yapılır? — https://www.alfaametal.com.tr/blog/otomatik-garaj-kapisi-bakimi-nasil-yapilir
+- Metal Merdiven İmalatı Süreci Nasıl İşler? — https://www.alfaametal.com.tr/blog/metal-merdiven-imalati-surec-nasil-isler
+
+Tüm yazılar: https://www.alfaametal.com.tr/blog
+
 ## Sayfalar
 
 - Ana sayfa: https://www.alfaametal.com.tr/
+- Hizmetler: https://www.alfaametal.com.tr/hizmetler
+- Blog: https://www.alfaametal.com.tr/blog
